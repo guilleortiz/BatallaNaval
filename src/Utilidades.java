@@ -5,18 +5,18 @@ public class Utilidades {
 	public Utilidades() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	public  int Aleatorio(int min, int max){
-		
+
+	public int Aleatorio(int min, int max) {
+
 		return (int) (Math.random() * max) + min;
 	}
+
+	public void refrescarPantalla(int t) {
+		for (int i = 0; i < t; i++) {
+			System.out.println();
+		}
+	}
 	
-	
-	public  void refrescarPantalla(int t){
-		 for (int i=0; i < t; i++){
-			 System.out.println();
-		 }
-	 }
 	public void MenuPrincipal(){
 		
 		
@@ -98,39 +98,48 @@ public class Utilidades {
 			System.out.println(" )`'-.,_)`'-.,_)`'-.,_)`'-..,_)`'-.,_)`'-.,_)`'-.,_)`'-.,_)`'-.,_)`'-.,_)`'-.,_)`'-.,_)`'-. ");
 			System.out.println(",_)`'-.,_)`'-.,_)`'-.,_)`'-.,_)`'-.,_ .,_)`'-.,_)`'-.,_)`'-.,_)`'-.,_)`'-.,_)`'-.,_)`'-.,_)`'-.,_)`'-. ");
 			
-			//refrescarPantalla(10);
-			java.awt.Toolkit.getDefaultToolkit().beep(); 
+		// refrescarPantalla(10);
+		java.awt.Toolkit.getDefaultToolkit().beep();
 
-			Scanner sc = new Scanner(System.in);
-			
-			 dificultad=sc.nextInt();
-			
-			refrescarPantalla(40);
-			//miTablero.ResetearTablero();
-			
-			switch (dificultad) {
-			case 1:
-				dificultad=50;
-				break;
-				
-			case 2:
-				dificultad=35;
-				break;
-				
-			case 3:
-				dificultad=22;
-				break;
+		Scanner sc = new Scanner(System.in);
 
-			default:
-				System.out.println("Opcion incorrecta");
-				break;
-			}
-			
-		
-		
+		dificultad = sc.nextInt();
+
+		refrescarPantalla(40);
+		// miTablero.ResetearTablero();
+
+		switch (dificultad) {
+		case 1:
+			dificultad = 50;
+			break;
+
+		case 2:
+			dificultad = 35;
+			break;
+
+		case 3:
+			dificultad = 22;
+			break;
+
+		default:
+			System.out.println("Opcion incorrecta");
+			break;
+		}
+
 		return dificultad;
-		
-		
+
+	}
+
+	public boolean InputValidation(int valor, int min, int max) {
+
+		if (valor >= min && valor <= max) {
+			return true;
+
+		} else {
+			return false;
+
+		}
+
 	}
 
 }
